@@ -28,28 +28,28 @@ Automatically update complied file if you edit script in src/.
 * rounds should be continue endless
 
 1. US1 after starting the program, the empty grid should be printed
-  1. the empty grid must be 3 x 3
-  2. "X: please enter the position of your mark (row:column):" should be printed
+	1. the empty grid must be 3 x 3
+	2. "X: please enter the position of your mark (row:column):" should be printed
 2. US2 a player can enter the position of a mark
-  1. input must be row:column (1:1)
-  2. "The inserted field is not valid. Try again:" should be printed by a wrong input
-  3. after entering a position, the grid with mark should be printed
-    1. the mark should be correct
-    2. the position should be correct
+	1. input must be row:column (1:1)
+	2. "The inserted field is not valid. Try again:" should be printed by a wrong input
+	3. after entering a position, the grid with mark should be printed
+		1. the mark should be correct
+		2. the position should be correct
 3. US3 play rounds
-  1. rounds should be played alternately
-    1. X takes the first turn of the first round
-    2. the looser takes first turn of the next round
-  2. after each positioning a mark, winner (or draw) should be detected
-    1. if a player won, it should be printed
-      1. "() won. Press enter to start a new round"
-    2. or draw, it should be printed
-      1. "draw. Press enter to start a new round"
-    3. if a round should be continue, "(): please enter the position of your mark (row:column):" should be printed
-      1. () should be the next player
+	1. rounds should be played alternately
+		1. X takes the first turn of the first round
+		2. the looser takes first turn of the next round
+	2. after each positioning a mark, winner (or draw) should be detected
+		1. if a player won, it should be printed
+			1. "() won. Press enter to start a new round"
+		2. or draw, it should be printed
+			1. "draw. Press enter to start a new round"
+		3. if a round should be continue, "(): please enter the position of your mark (row:column):" should be printed
+			1. () should be the next player
 4. US4 print stats
-  1. by pressing "p", stats should be printed
-    2. at any time
+	1. by pressing "p", stats should be printed
+		2. at any time
 4. US5 end the program
-  1. by pressing "e", the program should be terminated
-    2. at any time
+	1. by pressing "e", the program should be terminated
+		2. at any time
