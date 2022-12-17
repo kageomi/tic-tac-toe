@@ -41,7 +41,7 @@ Automatically update complied file if you edit script in src/.
 		1. X takes the first turn of the first round
 		1. X takes the first turn after draw
 		2. the looser takes first turn of the next round
-	2. turns should be played alternately
+	2. turns should be played alternately in a round
 	3. after each positioning a mark, winner (or draw) should be detected
 		1. if a player won, it should be printed
 			1. "() won. Press enter to start a new round"
@@ -52,7 +52,7 @@ Automatically update complied file if you edit script in src/.
 4. *US4* print stats
 	1. by pressing "p", stats should be printed
 		2. at any time
-  2. press enter to back to the game
+	2. press enter to back to the game
 4. *US5* end the program
 	1. by pressing "e", the program should be terminated
 		2. at any time
@@ -60,7 +60,7 @@ Automatically update complied file if you edit script in src/.
 
 ## Inputs
 1. row:column (2-1, 2-2)
-2. enter (3-2-1, 3-2-2, 4-2)
+2. enter (3-3-a, 3-3-b, 4-2)
 3. e
 4. p
 

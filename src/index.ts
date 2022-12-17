@@ -1,11 +1,3 @@
-import readline from 'readline'
+import { runGame } from './app'
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-})
-
-rl.question('how are you?', answer => {
-  if (answer === 'e') process.exit()
-  console.log(`your are ${answer}`)
-})
+runGame()
