@@ -2,7 +2,7 @@ import Mark from './Mark'
 
 type Row = [Mark, Mark, Mark]
 
-type GameField = [Row, Row, Row]
+type Board = [Row, Row, Row]
 
-export default GameField
+export default Board
 export { Row }

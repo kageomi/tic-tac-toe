@@ -5,6 +5,7 @@ module.exports = {
   transform: {
     '^.+\\.ts?$': 'ts-jest'
   },
+  testPathIgnorePatterns: ['src/__factories__/', 'dist/'],
   transformIgnorePatterns: ['node_modules/(?!troublesome-dependency/.*)'],
   moduleDirectories: ['node_modules', 'src']
 }

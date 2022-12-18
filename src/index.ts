@@ -1,3 +1,3 @@
-import { runGame } from './app'
+import { app } from './app'
 
-runGame()
+app()

@@ -1,54 +1,43 @@
-import Game from './Game'
 import { createClient } from './io'
 import { IOEventTypes } from './io/types'
-import messages from './messages'
 import { isPosition } from './types/Position'
+import { createStore } from './store'
+import { store as _store } from './store/store'
+import Board from './types/Board'
+import Player from './types/Player'
+import Stats from './types/Stats'
+import { createDisplay } from './display'
 
-const runGame = (): void => {
-  const game = new Game()
+const app = (): (() => void) => {
+  const store = createStore(_store)
   const io = createClient()
+  const display = createDisplay(io)
 
-  const printNextTurn = (): void => {
-    io.clear()
-    io.println(messages.gameFieldForPrint(game.currentGameField))
-    io.print(messages.insertPosition(game.nextPlayer))
+  const getCurrentBoad = (): Board => store.getters.currentBoard()
+  const getNextPlayer = (): Player => store.getters.nextPlayer()
+  const getWinner = (): Player | null => store.getters.winnerOfCurrentRound()
+  const getStats = (): Stats => store.getters.stats()
+  const isRoundFinished = (): boolean => store.getters.isCurrentRoundFinished()
+  const setMark = (positionString: string): void => {
+    const position = positionString.split(':').map(item => parseInt(item))
+    if (!isPosition(position))
+      throw new Error('the inserted position is invalid')
+    store.setters.setMark(position)
   }
-
-  const printRoundResult = async (): Promise<void> => {
-    io.clear()
-    const winner = game.currentRound.winner
-    const message =
-      winner != null
-        ? messages.endRoundWithWinner(winner)
-        : messages.endRoundWithDraw()
-    io.println(messages.gameFieldForPrint(game.currentGameField))
-    io.print(message)
-    await io.waitForAnswer()
-    game.startNewRound()
-  }
-
-  const printPositionError = (): void => {
-    io.clear()
-    io.println(messages.positionError())
-    io.println('')
-    io.println(messages.gameFieldForPrint(game.currentGameField))
-    io.print(messages.insertPosition(game.nextPlayer))
-  }
+  const startNewRound = (): void => store.setters.startNewRound()
 
   io.on(IOEventTypes.UPDATE_LINE, async line => {
-    const position = line.split(':').map(item => parseInt(item))
-    if (!isPosition(position)) {
-      printPositionError()
-      return
-    }
+    const position = line
     try {
-      game.currentRound.setMark(position)
-      if (game.currentRound.isFinished) {
-        await printRoundResult()
+      setMark(position)
+      if (isRoundFinished()) {
+        display.printResult(getCurrentBoad(), getWinner())
+        await io.waitForAnswer()
+        startNewRound()
       }
-      printNextTurn()
+      display.printTurn(getCurrentBoad(), getNextPlayer())
     } catch (error) {
-      printPositionError()
+      display.printTurn(getCurrentBoad(), getNextPlayer(), new Error(line))
     }
   })
 
@@ -58,14 +47,23 @@ const runGame = (): void => {
   })
 
   io.on(IOEventTypes.ON_PRESS_P, async (): Promise<void> => {
-    io.clear()
-    io.print(messages.statsForPrint(game.stats))
+    display.printStats(getStats())
     await io.waitForAnswer()
-    if (game.currentRound.isFinished) await printRoundResult()
-    printNextTurn()
+    if (isRoundFinished()) {
+      display.printResult(getCurrentBoad(), getWinner())
+      await io.waitForAnswer()
+      startNewRound()
+    }
+    display.printTurn(getCurrentBoad(), getNextPlayer())
   })
 
-  printNextTurn()
+  display.printTurn(getCurrentBoad(), getNextPlayer())
+
+  return (): void => {
+    store.setters.reset()
+    io.removeOnetimeListeners()
+    display.printTurn(getCurrentBoad(), getNextPlayer())
+  }
 }
 
-export { runGame }
+export { app }
