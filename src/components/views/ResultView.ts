@@ -1,5 +1,4 @@
 import { SimpleBoard } from '../elements/SimpleBoard'
-// import { ErrorMessage } from '../elements/ErrorMessage'
 import { VictoryMessage } from '../elements/VictoryMessage'
 import { DrawMessage } from '../elements/DrawMessage'
 import Board from '../../types/Board'

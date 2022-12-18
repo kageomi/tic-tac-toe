@@ -3,7 +3,6 @@ import { mockProcessExit, mockConsoleLog } from 'jest-mock-process'
 import { createClient } from '../../io'
 import { IOEventTypes } from '../../io/types'
 import clear from 'clear'
-// import readline from 'readline'
 
 jest.mock('clear')
 

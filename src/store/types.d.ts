@@ -24,6 +24,7 @@ interface Getters {
 interface Setters {
   setMark: (state: State, position: Position) => State
   startNewRound: (state: State) => State
+  reset: (state: State) => State
 }
 
 interface Store {

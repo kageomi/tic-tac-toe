@@ -8,7 +8,7 @@ import Player from './types/Player'
 import Stats from './types/Stats'
 import { createDisplay } from './display'
 
-const app = (): void => {
+const app = (): (() => void) => {
   const store = createStore(_store)
   const io = createClient()
   const display = createDisplay(io)
@@ -58,6 +58,12 @@ const app = (): void => {
   })
 
   display.printTurn(getCurrentBoad(), getNextPlayer())
+
+  return (): void => {
+    store.setters.reset()
+    io.removeOnetimeListeners()
+    display.printTurn(getCurrentBoad(), getNextPlayer())
+  }
 }
 
 export { app }

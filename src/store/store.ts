@@ -71,6 +71,9 @@ const store: Store = {
         history: [...history, emptyBoard()],
         nextPlayer
       }
+    },
+    reset: state => {
+      return initialState
     }
   }
 }

@@ -20,6 +20,7 @@ interface IO {
   close: () => void
   exit: () => void
   clear: () => void
+  removeOnetimeListeners: () => void
   waitForAnswer: () => Promise<string>
   print: (message: string) => void
   println: (message: string) => void

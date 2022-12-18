@@ -32,20 +32,31 @@ const createClient = (): IO => {
   }
   stdin.on('keypress', handleKeypress)
 
+  const removeAllListeners = (): void => {
+    events.removeAllListeners(IOEventTypes.ON_PRESS_P)
+    events.removeAllListeners(IOEventTypes.ON_PRESS_E)
+    events.removeAllListeners(IOEventTypes._UPDATE_LINE_ONCE)
+    events.removeAllListeners(IOEventTypes.UPDATE_LINE)
+    // rl.removeAllListeners()
+    // stdin.off('keypress', handleKeypress)
+  }
+
   const io = {
     on: (...args: Parameters<typeof events.on>) => events.on(...args),
     off: (...args: Parameters<typeof events.off>) => events.off(...args),
     close: () => {
       rl.close()
-      rl.removeAllListeners()
+      removeAllListeners()
     },
     exit: () => {
       rl.close()
-      rl.removeAllListeners()
-      stdin.off('keypress', handleKeypress)
+      removeAllListeners()
       process.exit(0)
     },
     clear: () => clear(),
+    removeOnetimeListeners: () => {
+      events.removeAllListeners(IOEventTypes._UPDATE_LINE_ONCE)
+    },
     async waitForAnswer() {
       events.removeAllListeners(IOEventTypes._UPDATE_LINE_ONCE)
       return await new Promise<string>(resolve => {
@@ -55,7 +66,7 @@ const createClient = (): IO => {
       })
     },
     print: (message: string) => process.stdout.write(message),
-    println: (message: string) => console.log(message)
+    println: (message: string) => process.stdout.write(`${message}`)
   }
 
   return io

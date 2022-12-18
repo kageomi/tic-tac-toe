@@ -1,4 +1,4 @@
-import { store } from '../../store/store'
+import { store, initialState } from '../../store/store'
 import { State } from '../../store/types'
 import { players } from '../../types/Player'
 import Position from '../../types/Position'
@@ -624,6 +624,24 @@ describe('store', () => {
         const result = startNewRound(state)
 
         expect(result.history.length).toBe(1)
+      })
+    })
+    describe('reset', () => {
+      const { reset } = store.setters
+      test('should return initialStore', () => {
+        const state: State = {
+          history: [
+            [
+              ['X', null, 'X'],
+              [null, 'O', null],
+              [null, 'O', null]
+            ]
+          ],
+          nextPlayer: 'X'
+        }
+        const result = reset(state)
+
+        expect(JSON.stringify(result)).toBe(JSON.stringify(initialState))
       })
     })
   })

@@ -32,7 +32,8 @@ describe('injected store', () => {
     },
     setters: {
       setMark: spyOn(_store.setters, 'setMark'),
-      startNewRound: spyOn(_store.setters, 'startNewRound')
+      startNewRound: spyOn(_store.setters, 'startNewRound'),
+      reset: spyOn(_store.setters, 'reset')
     }
   }
 
@@ -139,6 +140,17 @@ describe('injected store', () => {
     test('should call store.startNewRound and should return undefined', () => {
       const func = store.setters.startNewRound
       const mocked = mockedStore.setters.startNewRound
+      const mockResponse = state
+      mocked.mockImplementationOnce(() => mockResponse)
+      const result = func()
+      expect(mocked).toHaveBeenCalled()
+      expect(mocked).toHaveBeenCalledTimes(1)
+      expect(mocked).toHaveBeenCalledWith(_store.state)
+      expect(result).toBeUndefined()
+    })
+    test('should call store.reset and should return undefined', () => {
+      const func = store.setters.reset
+      const mocked = mockedStore.setters.reset
       const mockResponse = state
       mocked.mockImplementationOnce(() => mockResponse)
       const result = func()
