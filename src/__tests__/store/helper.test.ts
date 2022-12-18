@@ -1,9 +1,9 @@
-import { isFinished, getWinner, hasSameItems } from '../judge'
-import GameField from '../types/GameField'
-import Mark from '../types/Mark'
+import { isFinished, getWinner, hasSameItems } from '../../store/helper'
+import Board from '../../types/Board'
+import Mark from '../../types/Mark'
 
 const table: Array<{
-  field: GameField
+  field: Board
   finished: boolean
   winner: Mark
 }> = [
