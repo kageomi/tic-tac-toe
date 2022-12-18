@@ -1,10 +1,6 @@
-import { Setter, Getter, State, Getters, Setters } from './types'
-import { store } from './store'
+import { Setter, Getter, State, Getters, Setters, Store } from './types'
+import { Tail } from '../types/util'
 
-/* eslint-disable  @typescript-eslint/no-unused-vars */
-type Tail<T extends unknown[]> = T extends [infer Head, ...infer Tail]
-  ? Tail
-  : never
 type InjectedGetters = {
   [P in keyof Getters]: () => ReturnType<Getters[P]>
 }
@@ -17,7 +13,7 @@ interface InjectedStore {
   setters: InjectedSetters
 }
 
-const createStore = (): InjectedStore => {
+const createStore = (store: Store): InjectedStore => {
   const { getters, setters } = store
 
   const injectStateToGetter = <T extends Getter>(

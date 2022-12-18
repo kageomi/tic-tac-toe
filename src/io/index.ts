@@ -12,9 +12,9 @@ const createClient = (): IO => {
 
   const rl = readline.createInterface({ input: stdin, output: stdout })
   rl.on('line', line => {
-    const onceListeners = events.listeners(IOEventTypes.UPDATE_LINE_ONCE)
+    const onceListeners = events.listeners(IOEventTypes._UPDATE_LINE_ONCE)
     if (onceListeners.length > 0) {
-      events.emit(IOEventTypes.UPDATE_LINE_ONCE, line)
+      events.emit(IOEventTypes._UPDATE_LINE_ONCE, line)
       return
     }
     events.emit(IOEventTypes.UPDATE_LINE, line)
@@ -35,16 +35,21 @@ const createClient = (): IO => {
   const io = {
     on: (...args: Parameters<typeof events.on>) => events.on(...args),
     off: (...args: Parameters<typeof events.off>) => events.off(...args),
+    close: () => {
+      rl.close()
+      rl.removeAllListeners()
+    },
     exit: () => {
       rl.close()
+      rl.removeAllListeners()
       stdin.off('keypress', handleKeypress)
       process.exit(0)
     },
     clear: () => clear(),
     async waitForAnswer() {
-      events.removeAllListeners(IOEventTypes.UPDATE_LINE_ONCE)
+      events.removeAllListeners(IOEventTypes._UPDATE_LINE_ONCE)
       return await new Promise<string>(resolve => {
-        events.once(IOEventTypes.UPDATE_LINE_ONCE, line => {
+        events.once(IOEventTypes._UPDATE_LINE_ONCE, line => {
           resolve(line)
         })
       })

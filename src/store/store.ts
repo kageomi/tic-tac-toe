@@ -49,6 +49,8 @@ const store: Store = {
     setMark: (state, position) => {
       const { history, nextPlayer } = state
       const currentBoard = getLast<Board>(history)
+      if (isFinished(currentBoard)) return state
+
       const updatedBoard = setMark(currentBoard, position, nextPlayer)
       const player = nextPlayer === players[0] ? players[1] : players[0]
       return {
@@ -60,6 +62,8 @@ const store: Store = {
     startNewRound: state => {
       const { history } = state
       const currentBoard = getLast<Board>(history)
+      if (!isFinished(currentBoard)) return state
+
       const winner = getWinner(currentBoard)
       const nextPlayer = winner === players[0] ? players[1] : players[0]
       return {
@@ -71,4 +75,4 @@ const store: Store = {
   }
 }
 
-export { store }
+export { store, initialState }

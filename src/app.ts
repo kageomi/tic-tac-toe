@@ -3,12 +3,14 @@ import { IOEventTypes } from './io/types'
 import messages from './messages'
 import { isPosition } from './types/Position'
 import { createStore } from './store'
+import { store as _store } from './store/store'
 import Board from './types/Board'
 import Player from './types/Player'
 import Stats from './types/Stats'
+// import { ResultView, StatsView, TurnView } from './components/views'
 
 const app = (): void => {
-  const store = createStore()
+  const store = createStore(_store)
   const io = createClient()
 
   const getCurrentBoad = (): Board => store.getters.currentBoard()
