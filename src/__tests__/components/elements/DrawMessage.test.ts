@@ -6,9 +6,9 @@ describe('DrawMessage', () => {
     const result = DrawMessage()
     expect(result).toMatch(/Draw/)
   })
-  test('should have "please"', () => {
+  test('should have "Press"', () => {
     const result = DrawMessage()
-    expect(result).toMatch(/please/)
+    expect(result).toMatch(/Press/)
   })
   test('should have "enter"', () => {
     const result = DrawMessage()

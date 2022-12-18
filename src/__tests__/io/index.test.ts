@@ -1,5 +1,9 @@
 import { stdin as mockStdin, MockSTDIN } from 'mock-stdin'
-import { mockProcessExit, mockConsoleLog } from 'jest-mock-process'
+import {
+  mockProcessExit,
+  mockConsoleLog,
+  mockProcessStdout
+} from 'jest-mock-process'
 import { createClient } from '../../io'
 import { IOEventTypes } from '../../io/types'
 import clear from 'clear'
@@ -85,25 +89,6 @@ describe('io client', () => {
     expect(mocked).toHaveBeenCalledTimes(1)
   })
 
-  // test('close: should call readline.close', () => {
-  //   // const mockedClose = jest.fn()
-  //   const mocked = jest.spyOn(readline, 'createInterface')
-  //   const mockedClose = (readline.createInterface(input: process).)
-  //   // .mockImplementation(() => {
-  //   //   return {
-  //   //     close: () => {
-  //   //       console.log('mock close')
-  //   //       mockedClose()
-  //   //     }
-  //   //   }
-  //   // })
-  //   const _io = createClient()
-  //   _io.close()
-
-  //   expect(mocked).toHaveBeenCalled()
-  //   expect(mocked).toHaveBeenCalledTimes(1)
-  // })
-
   test('close: should call clear', () => {
     const mocked = clear as jest.Mock
 
@@ -115,7 +100,7 @@ describe('io client', () => {
 
   test('print: should print on console', () => {
     const message = 'hi'
-    const mocked = mockConsoleLog()
+    const mocked = mockProcessStdout()
     io.println(message)
     expect(mocked).toHaveBeenCalled()
     expect(mocked).toHaveBeenCalledTimes(1)
@@ -124,7 +109,7 @@ describe('io client', () => {
 
   test('println: should println on console', () => {
     const message = 'hi'
-    const mocked = mockConsoleLog()
+    const mocked = mockProcessStdout()
     io.println(message)
     expect(mocked).toHaveBeenCalled()
     expect(mocked).toHaveBeenCalledTimes(1)
