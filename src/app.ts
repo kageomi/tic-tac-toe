@@ -1,17 +1,17 @@
 import { createClient } from './io'
 import { IOEventTypes } from './io/types'
-import messages from './messages'
 import { isPosition } from './types/Position'
 import { createStore } from './store'
 import { store as _store } from './store/store'
 import Board from './types/Board'
 import Player from './types/Player'
 import Stats from './types/Stats'
-// import { ResultView, StatsView, TurnView } from './components/views'
+import { createDisplay } from './display'
 
 const app = (): void => {
   const store = createStore(_store)
   const io = createClient()
+  const display = createDisplay(io)
 
   const getCurrentBoad = (): Board => store.getters.currentBoard()
   const getNextPlayer = (): Player => store.getters.nextPlayer()
@@ -26,48 +26,18 @@ const app = (): void => {
   }
   const startNewRound = (): void => store.setters.startNewRound()
 
-  const printNextTurn = (): void => {
-    io.clear()
-    io.println('')
-    io.println(messages.BoardForPrint(getCurrentBoad()))
-    io.println('')
-    io.print(messages.insertPosition(getNextPlayer()))
-  }
-
-  const printRoundResult = async (): Promise<void> => {
-    io.clear()
-    const winner = getWinner()
-    const message =
-      winner != null
-        ? messages.endRoundWithWinner(winner)
-        : messages.endRoundWithDraw()
-    io.println('')
-    io.println(messages.BoardForPrint(getCurrentBoad()))
-    io.println('')
-    io.print(message)
-    await io.waitForAnswer()
-    startNewRound()
-  }
-
-  const printPositionError = (): void => {
-    io.clear()
-    io.println(messages.positionError())
-    io.println('')
-    io.println(messages.BoardForPrint(getCurrentBoad()))
-    io.println('')
-    io.print(messages.insertPosition(getNextPlayer()))
-  }
-
   io.on(IOEventTypes.UPDATE_LINE, async line => {
     const position = line
     try {
       setMark(position)
       if (isRoundFinished()) {
-        await printRoundResult()
+        display.printResult(getCurrentBoad(), getWinner())
+        await io.waitForAnswer()
+        startNewRound()
       }
-      printNextTurn()
+      display.printTurn(getCurrentBoad(), getNextPlayer())
     } catch (error) {
-      printPositionError()
+      display.printTurn(getCurrentBoad(), getNextPlayer(), new Error(line))
     }
   })
 
@@ -77,14 +47,17 @@ const app = (): void => {
   })
 
   io.on(IOEventTypes.ON_PRESS_P, async (): Promise<void> => {
-    io.clear()
-    io.print(messages.statsForPrint(getStats()))
+    display.printStats(getStats())
     await io.waitForAnswer()
-    if (isRoundFinished()) await printRoundResult()
-    printNextTurn()
+    if (isRoundFinished()) {
+      display.printResult(getCurrentBoad(), getWinner())
+      await io.waitForAnswer()
+      startNewRound()
+    }
+    display.printTurn(getCurrentBoad(), getNextPlayer())
   })
 
-  printNextTurn()
+  display.printTurn(getCurrentBoad(), getNextPlayer())
 }
 
 export { app }
