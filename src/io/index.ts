@@ -64,6 +64,7 @@ const createClient = (): IO => {
     },
     destroy: () => {
       removeAllListeners()
+      stdin.pause()
     },
     clear: () => {
       clear()

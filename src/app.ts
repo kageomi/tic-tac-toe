@@ -8,7 +8,13 @@ import Player from './types/Player'
 import Stats from './types/Stats'
 import { createDisplay } from './display'
 
-const app = (): (() => void) => {
+interface AppHandler {
+  store: ReturnType<typeof createStore>
+  reset: () => void
+  exit: () => void
+}
+
+const app = (): AppHandler => {
   const store = createStore(_store)
   const io = createClient()
   const display = createDisplay(io)
@@ -36,6 +42,7 @@ const app = (): (() => void) => {
         startNewRound()
       }
       display.printTurn(getCurrentBoad(), getNextPlayer())
+      io.print(`round => ${store.state().history.length}`)
     } catch (error) {
       display.printTurn(getCurrentBoad(), getNextPlayer(), new Error(line))
     }
@@ -59,10 +66,17 @@ const app = (): (() => void) => {
 
   display.printTurn(getCurrentBoad(), getNextPlayer())
 
-  return (): void => {
-    store.setters.reset()
-    io.removeOnetimeListeners()
-    display.printTurn(getCurrentBoad(), getNextPlayer())
+  return {
+    store,
+    reset: (): void => {
+      store.setters.reset()
+      io.removeOnetimeListeners()
+      display.printTurn(getCurrentBoad(), getNextPlayer())
+    },
+    exit: (): void => {
+      // io.destroy()
+      io.pause()
+    }
   }
 }
 
