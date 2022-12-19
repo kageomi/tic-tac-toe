@@ -1,5 +1,5 @@
 import { createDisplay } from '../display'
-import { createClient } from '../io'
+import { createClient } from '../io/index'
 import { IO } from '../io/types'
 import Board from '../types/Board'
 import Player from '../types/Player'
@@ -15,9 +15,10 @@ describe('display', () => {
   const mockedIoInstance: MockedIO = {
     on: jest.fn(),
     off: jest.fn(),
-    close: jest.fn(),
+    destroy: jest.fn(),
     exit: jest.fn(),
     clear: jest.fn(),
+    pause: jest.fn(),
     removeOnetimeListeners: jest.fn(),
     waitForAnswer: jest.fn(),
     print: jest.fn(),
