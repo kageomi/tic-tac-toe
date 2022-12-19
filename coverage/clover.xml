@@ -1,24 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1671403193441" clover="3.2.0">
-  <project timestamp="1671403193441" name="All files">
-    <metrics statements="204" coveredstatements="196" conditionals="35" coveredconditionals="31" methods="66" coveredmethods="61" elements="305" coveredelements="288" complexity="0" loc="204" ncloc="204" packages="7" files="19" classes="19"/>
+<coverage generated="1671487738121" clover="3.2.0">
+  <project timestamp="1671487738121" name="All files">
+    <metrics statements="256" coveredstatements="254" conditionals="45" coveredconditionals="43" methods="85" coveredmethods="85" elements="386" coveredelements="382" complexity="0" loc="256" ncloc="256" packages="7" files="21" classes="21"/>
     <package name="src">
-      <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+      <metrics statements="61" coveredstatements="60" conditionals="3" coveredconditionals="3" methods="21" coveredmethods="21"/>
+      <file name="app.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/app.ts">
+        <metrics statements="48" coveredstatements="47" conditionals="3" coveredconditionals="3" methods="16" coveredmethods="16"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="278" type="stmt"/>
+        <line num="23" count="252" type="stmt"/>
+        <line num="24" count="26" type="stmt"/>
+        <line num="25" count="12" type="stmt"/>
+        <line num="26" count="170" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="357" type="stmt"/>
+        <line num="29" count="185" type="cond" truecount="1" falsecount="0"/>
+        <line num="30" count="13" type="stmt"/>
+        <line num="31" count="172" type="stmt"/>
+        <line num="33" count="11" type="stmt"/>
+        <line num="35" count="185" type="stmt"/>
+        <line num="36" count="185" type="stmt"/>
+        <line num="37" count="185" type="stmt"/>
+        <line num="38" count="185" type="stmt"/>
+        <line num="39" count="168" type="cond" truecount="1" falsecount="0"/>
+        <line num="40" count="25" type="stmt"/>
+        <line num="41" count="25" type="stmt"/>
+        <line num="42" count="11" type="stmt"/>
+        <line num="44" count="154" type="stmt"/>
+        <line num="46" count="17" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="51" count="4" type="stmt"/>
+        <line num="52" count="4" type="stmt"/>
+        <line num="55" count="12" type="stmt"/>
+        <line num="56" count="12" type="stmt"/>
+        <line num="57" count="12" type="stmt"/>
+        <line num="58" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="71" count="79" type="stmt"/>
+        <line num="72" count="79" type="stmt"/>
+        <line num="73" count="79" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="81" count="1" type="stmt"/>
+      </file>
       <file name="display.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/display.ts">
         <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="5" type="stmt"/>
-        <line num="16" count="5" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="20" count="3" type="stmt"/>
-        <line num="21" count="3" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="295" type="stmt"/>
+        <line num="16" count="295" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="20" count="255" type="stmt"/>
+        <line num="21" count="255" type="stmt"/>
+        <line num="24" count="27" type="stmt"/>
+        <line num="25" count="27" type="stmt"/>
+        <line num="28" count="13" type="stmt"/>
+        <line num="29" count="13" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.__factories__.store">
@@ -41,247 +92,254 @@
       <metrics statements="31" coveredstatements="31" conditionals="8" coveredconditionals="8" methods="11" coveredmethods="11"/>
       <file name="BackToGameMessage.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/components/elements/BackToGameMessage.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="17" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
       </file>
       <file name="DrawMessage.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/components/elements/DrawMessage.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
       </file>
       <file name="ErrorMessage.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/components/elements/ErrorMessage.ts">
         <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="6" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="23" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
       </file>
       <file name="InputMessage.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/components/elements/InputMessage.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="9" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="261" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
       </file>
       <file name="MessageEdge.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/components/elements/MessageEdge.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="35" type="stmt"/>
-        <line num="3" count="6" type="stmt"/>
+        <line num="1" count="342" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
       </file>
       <file name="SimpleBoard.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/components/elements/SimpleBoard.ts">
         <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="9" type="stmt"/>
-        <line num="6" count="81" type="cond" truecount="4" falsecount="0"/>
-        <line num="11" count="2" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="287" type="stmt"/>
+        <line num="6" count="2583" type="cond" truecount="4" falsecount="0"/>
+        <line num="11" count="3" type="stmt"/>
       </file>
       <file name="SimpleStats.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/components/elements/SimpleStats.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
-        <line num="5" count="10" type="stmt"/>
-        <line num="7" count="5" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="17" type="stmt"/>
+        <line num="5" count="34" type="stmt"/>
+        <line num="7" count="17" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
       </file>
       <file name="VictoryMessage.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/components/elements/VictoryMessage.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="27" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.components.views">
-      <metrics statements="21" coveredstatements="21" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="6"/>
+      <metrics statements="21" coveredstatements="21" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
       <file name="ResultView.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/components/views/ResultView.ts">
-        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-      </file>
-      <file name="StatsView.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/components/views/StatsView.ts">
-        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-      </file>
-      <file name="TurnView.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/components/views/TurnView.ts">
         <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-      </file>
-      <file name="index.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/components/views/index.ts">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="6" type="stmt"/>
-      </file>
-    </package>
-    <package name="src.io">
-      <metrics statements="46" coveredstatements="38" conditionals="4" coveredconditionals="2" methods="15" coveredmethods="10"/>
-      <file name="index.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/io/index.ts">
-        <metrics statements="46" coveredstatements="38" conditionals="4" coveredconditionals="2" methods="15" coveredmethods="10"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="7" type="stmt"/>
-        <line num="16" count="7" type="cond" truecount="0" falsecount="1"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="20" count="7" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="24" count="19" type="cond" truecount="1" falsecount="0"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="28" count="19" type="cond" truecount="1" falsecount="0"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="2" type="stmt"/>
-        <line num="37" count="2" type="stmt"/>
-        <line num="38" count="2" type="stmt"/>
-        <line num="39" count="2" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="45" count="4" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="48" count="1" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
-        <line num="54" count="1" type="stmt"/>
-        <line num="56" count="1" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="61" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
-        <line num="64" count="0" type="stmt"/>
-        <line num="68" count="0" type="stmt"/>
-        <line num="69" count="2" type="stmt"/>
-        <line num="72" count="1" type="stmt"/>
+        <line num="8" count="28" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+      </file>
+      <file name="StatsView.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/components/views/StatsView.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="14" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+      </file>
+      <file name="TurnView.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/components/views/TurnView.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="257" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/components/views/index.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="259" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.io">
+      <metrics statements="44" coveredstatements="43" conditionals="9" coveredconditionals="8" methods="15" coveredmethods="15"/>
+      <file name="index.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/io/index.ts">
+        <metrics statements="44" coveredstatements="43" conditionals="9" coveredconditionals="8" methods="15" coveredmethods="15"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="7" count="3" type="cond" truecount="0" falsecount="1"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="842" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="295" type="stmt"/>
+        <line num="23" count="295" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="752" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="5" type="stmt"/>
+        <line num="30" count="748" type="cond" truecount="1" falsecount="0"/>
+        <line num="31" count="13" type="stmt"/>
+        <line num="33" count="748" type="cond" truecount="3" falsecount="0"/>
+        <line num="34" count="205" type="stmt"/>
+        <line num="35" count="205" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="13" type="stmt"/>
+        <line num="37" count="13" type="stmt"/>
+        <line num="39" count="192" type="stmt"/>
+        <line num="41" count="192" type="stmt"/>
+        <line num="43" count="735" type="stmt"/>
+        <line num="44" count="735" type="cond" truecount="1" falsecount="0"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="49" count="7" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="52" count="5" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="58" count="295" type="stmt"/>
+        <line num="61" count="79" type="stmt"/>
+        <line num="64" count="38" type="stmt"/>
+        <line num="65" count="38" type="stmt"/>
+        <line num="66" count="38" type="stmt"/>
+        <line num="67" count="13" type="stmt"/>
+        <line num="72" count="290" type="stmt"/>
         <line num="75" count="2" type="stmt"/>
+        <line num="80" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.store">
-      <metrics statements="81" coveredstatements="81" conditionals="15" coveredconditionals="14" methods="26" coveredmethods="26"/>
+      <metrics statements="82" coveredstatements="82" conditionals="15" coveredconditionals="15" methods="27" coveredmethods="27"/>
       <file name="helper.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/store/helper.ts">
         <metrics statements="31" coveredstatements="31" conditionals="8" coveredconditionals="8" methods="9" coveredmethods="9"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="11" count="955" type="stmt"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="15" count="72" type="stmt"/>
-        <line num="16" count="72" type="stmt"/>
-        <line num="17" count="146" type="cond" truecount="1" falsecount="0"/>
-        <line num="18" count="44" type="stmt"/>
-        <line num="19" count="44" type="stmt"/>
-        <line num="21" count="102" type="cond" truecount="1" falsecount="0"/>
-        <line num="22" count="6" type="stmt"/>
-        <line num="23" count="6" type="stmt"/>
-        <line num="26" count="72" type="cond" truecount="1" falsecount="0"/>
-        <line num="27" count="16" type="stmt"/>
-        <line num="28" count="72" type="cond" truecount="1" falsecount="0"/>
-        <line num="29" count="24" type="stmt"/>
-        <line num="30" count="72" type="stmt"/>
-        <line num="33" count="3" type="stmt"/>
-        <line num="34" count="123" type="cond" truecount="1" falsecount="0"/>
-        <line num="35" count="33" type="stmt"/>
-        <line num="38" count="3" type="stmt"/>
-        <line num="39" count="15" type="stmt"/>
-        <line num="40" count="15" type="stmt"/>
-        <line num="41" count="15" type="stmt"/>
-        <line num="44" count="15" type="stmt"/>
-        <line num="45" count="12" type="cond" truecount="3" falsecount="0"/>
-        <line num="46" count="3" type="stmt"/>
-        <line num="47" count="27" type="stmt"/>
-        <line num="48" count="9" type="stmt"/>
-        <line num="49" count="9" type="stmt"/>
-        <line num="52" count="34" type="stmt"/>
-        <line num="54" count="3" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="11" count="6493" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="480" type="stmt"/>
+        <line num="16" count="480" type="stmt"/>
+        <line num="17" count="1041" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="316" type="stmt"/>
+        <line num="19" count="316" type="stmt"/>
+        <line num="21" count="725" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="91" type="stmt"/>
+        <line num="23" count="91" type="stmt"/>
+        <line num="26" count="480" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="56" type="stmt"/>
+        <line num="28" count="480" type="cond" truecount="1" falsecount="0"/>
+        <line num="29" count="211" type="stmt"/>
+        <line num="30" count="480" type="stmt"/>
+        <line num="33" count="4" type="stmt"/>
+        <line num="34" count="1271" type="cond" truecount="1" falsecount="0"/>
+        <line num="35" count="388" type="stmt"/>
+        <line num="38" count="4" type="stmt"/>
+        <line num="39" count="192" type="stmt"/>
+        <line num="40" count="192" type="stmt"/>
+        <line num="41" count="192" type="stmt"/>
+        <line num="44" count="192" type="stmt"/>
+        <line num="45" count="186" type="cond" truecount="3" falsecount="0"/>
+        <line num="46" count="4" type="stmt"/>
+        <line num="47" count="546" type="stmt"/>
+        <line num="48" count="182" type="stmt"/>
+        <line num="49" count="182" type="stmt"/>
+        <line num="52" count="701" type="stmt"/>
+        <line num="54" count="4" type="stmt"/>
       </file>
       <file name="index.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/store/index.ts">
-        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="23" count="5" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="28" count="1" type="stmt"/>
-        <line num="29" count="5" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="38" count="3" type="stmt"/>
-        <line num="39" count="3" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="46" count="3" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="59" count="1" type="stmt"/>
+        <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="23" count="747" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="10" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="38" count="6" type="stmt"/>
+        <line num="39" count="273" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="46" count="6" type="stmt"/>
+        <line num="52" count="2" type="stmt"/>
+        <line num="53" count="5" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
       </file>
       <file name="store.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/store/store.ts">
-        <metrics statements="35" coveredstatements="35" conditionals="7" coveredconditionals="6" methods="10" coveredmethods="10"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="19" count="5" type="stmt"/>
-        <line num="20" count="5" type="stmt"/>
-        <line num="24" count="5" type="stmt"/>
-        <line num="25" count="10" type="stmt"/>
-        <line num="26" count="10" type="cond" truecount="1" falsecount="0"/>
-        <line num="28" count="5" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
-        <line num="34" count="3" type="stmt"/>
-        <line num="35" count="3" type="stmt"/>
-        <line num="38" count="6" type="stmt"/>
-        <line num="39" count="6" type="stmt"/>
-        <line num="40" count="6" type="stmt"/>
-        <line num="43" count="8" type="stmt"/>
-        <line num="44" count="8" type="stmt"/>
-        <line num="45" count="8" type="stmt"/>
-        <line num="50" count="10" type="stmt"/>
-        <line num="51" count="10" type="stmt"/>
-        <line num="52" count="10" type="cond" truecount="1" falsecount="0"/>
-        <line num="54" count="8" type="stmt"/>
-        <line num="55" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="56" count="5" type="stmt"/>
-        <line num="63" count="3" type="stmt"/>
-        <line num="64" count="3" type="stmt"/>
-        <line num="65" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="67" count="2" type="stmt"/>
-        <line num="68" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="69" count="2" type="stmt"/>
-        <line num="76" count="1" type="stmt"/>
-        <line num="81" count="2" type="stmt"/>
+        <metrics statements="35" coveredstatements="35" conditionals="7" coveredconditionals="7" methods="10" coveredmethods="10"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="17" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="19" count="17" type="stmt"/>
+        <line num="20" count="17" type="stmt"/>
+        <line num="24" count="17" type="stmt"/>
+        <line num="25" count="25" type="stmt"/>
+        <line num="26" count="25" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="17" type="stmt"/>
+        <line num="31" count="254" type="stmt"/>
+        <line num="34" count="281" type="stmt"/>
+        <line num="35" count="281" type="stmt"/>
+        <line num="38" count="180" type="stmt"/>
+        <line num="39" count="180" type="stmt"/>
+        <line num="40" count="180" type="stmt"/>
+        <line num="43" count="34" type="stmt"/>
+        <line num="44" count="34" type="stmt"/>
+        <line num="45" count="34" type="stmt"/>
+        <line num="50" count="187" type="stmt"/>
+        <line num="51" count="187" type="stmt"/>
+        <line num="52" count="187" type="cond" truecount="1" falsecount="0"/>
+        <line num="54" count="185" type="stmt"/>
+        <line num="55" count="178" type="cond" truecount="2" falsecount="0"/>
+        <line num="56" count="178" type="stmt"/>
+        <line num="63" count="15" type="stmt"/>
+        <line num="64" count="15" type="stmt"/>
+        <line num="65" count="15" type="cond" truecount="1" falsecount="0"/>
+        <line num="67" count="14" type="stmt"/>
+        <line num="68" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="69" count="14" type="stmt"/>
+        <line num="76" count="80" type="stmt"/>
+        <line num="81" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.types">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="Player.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/types/Player.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+      </file>
+      <file name="Position.ts" path="/Users/kageyamatadaomi/Works/tic-tac-toe/src/types/Position.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="185" type="cond" truecount="0" falsecount="1"/>
+        <line num="5" count="185" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="344" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
       </file>
     </package>
   </project>
