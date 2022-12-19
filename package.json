@@ -28,7 +28,6 @@
     "eslint-plugin-promise": "^6.0.0",
     "jest": "^29.3.1",
     "jest-mock-process": "^2.0.0",
-    "mock-stdin": "^1.0.0",
     "nodemon": "^2.0.20",
     "prettier": "^2.8.1",
     "ts-jest": "^29.0.3",
@@ -36,8 +35,6 @@
     "typescript": "*"
   },
   "dependencies": {
-    "@types/clear": "^0.1.2",
-    "clear": "^0.1.0",
     "tiny-typed-emitter": "^2.1.0"
   }
 }
