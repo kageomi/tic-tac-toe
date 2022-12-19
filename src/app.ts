@@ -42,7 +42,6 @@ const app = (): AppHandler => {
         startNewRound()
       }
       display.printTurn(getCurrentBoad(), getNextPlayer())
-      io.print(`round => ${store.state().history.length}`)
     } catch (error) {
       display.printTurn(getCurrentBoad(), getNextPlayer(), new Error(line))
     }
