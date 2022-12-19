@@ -115,7 +115,20 @@ describe('injected store', () => {
   })
 
   describe('setters', () => {
-    const state: State = {
+    beforeEach(() => {
+      jest.resetAllMocks()
+      _store.state = {
+        history: [
+          [
+            [null, null, null],
+            [null, null, null],
+            [null, null, null]
+          ]
+        ],
+        nextPlayer: 'X'
+      }
+    })
+    const defaultState: State = {
       history: [
         [
           [null, null, null],
@@ -128,7 +141,7 @@ describe('injected store', () => {
     test('should call store.setMark and should return undefined', () => {
       const func = store.setters.setMark
       const mocked = mockedStore.setters.setMark
-      const mockResponse = state
+      const mockResponse = defaultState
       mocked.mockImplementationOnce(() => mockResponse)
       const args = [1, 1] as Position
       const result = func(args)
@@ -137,10 +150,33 @@ describe('injected store', () => {
       expect(mocked).toHaveBeenCalledWith(_store.state, args)
       expect(result).toBeUndefined()
     })
-    test('should call store.startNewRound and should return undefined', () => {
+    test('should call store.setMark and update store', () => {
+      const func = store.setters.setMark
+      const mocked = mockedStore.setters.setMark
+      const board: Board = [
+        ['X', 'X', 'X'],
+        ['X', 'X', 'X'],
+        ['X', 'X', 'X']
+      ]
+      const mockResponse = {
+        ...defaultState,
+        history: [board]
+      }
+      mocked.mockImplementationOnce(() => mockResponse)
+      const args = [1, 1] as Position
+      const result = func(args)
+      expect(mocked).toHaveBeenCalled()
+      expect(mocked).toHaveBeenCalledTimes(1)
+      expect(result).toBeUndefined()
+      const { history } = _store.state
+      expect(JSON.stringify(history[history.length - 1])).toBe(
+        JSON.stringify(board)
+      )
+    })
+    test('should call store.startNewRound and return undefined', () => {
       const func = store.setters.startNewRound
       const mocked = mockedStore.setters.startNewRound
-      const mockResponse = state
+      const mockResponse = defaultState
       mocked.mockImplementationOnce(() => mockResponse)
       const result = func()
       expect(mocked).toHaveBeenCalled()
@@ -148,10 +184,34 @@ describe('injected store', () => {
       expect(mocked).toHaveBeenCalledWith(_store.state)
       expect(result).toBeUndefined()
     })
+
+    test('should call store.startNewRound and should should update state', () => {
+      const func = store.setters.startNewRound
+      const board: Board = [
+        ['X', 'X', 'X'],
+        ['X', 'X', 'X'],
+        ['X', 'X', 'X']
+      ]
+      const mockResponse = {
+        ...defaultState,
+        history: [board]
+      }
+      const mocked = mockedStore.setters.startNewRound
+      mocked.mockImplementationOnce(() => mockResponse)
+      const result = func()
+      expect(mocked).toHaveBeenCalled()
+      expect(mocked).toHaveBeenCalledTimes(1)
+      expect(result).toBeUndefined()
+      const { history } = _store.state
+      expect(JSON.stringify(history[history.length - 1])).toBe(
+        JSON.stringify(board)
+      )
+    })
+
     test('should call store.reset and should return undefined', () => {
       const func = store.setters.reset
       const mocked = mockedStore.setters.reset
-      const mockResponse = state
+      const mockResponse = defaultState
       mocked.mockImplementationOnce(() => mockResponse)
       const result = func()
       expect(mocked).toHaveBeenCalled()

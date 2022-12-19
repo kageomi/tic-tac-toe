@@ -8,7 +8,7 @@ type InjectedSetters = {
   [P in keyof Setters]: (...args: Tail<Parameters<Setters[P]>>) => void
 }
 interface InjectedStore {
-  state: State
+  state: () => State
   getters: InjectedGetters
   setters: InjectedSetters
 }
@@ -50,7 +50,7 @@ const createStore = (store: Store): InjectedStore => {
   }, {}) as InjectedSetters
 
   return {
-    state: store.state,
+    state: () => store.state,
     getters: injectedGetters,
     setters: injectedSetters
   }

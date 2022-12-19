@@ -44,26 +44,14 @@ const createClient = (): IO => {
   }
   stdin.on('keypress', directOut)
 
-  const removeAllListeners = (): void => {
-    events.removeAllListeners(IOEventTypes.ON_PRESS_P)
-    events.removeAllListeners(IOEventTypes.ON_PRESS_E)
-    events.removeAllListeners(IOEventTypes._UPDATE_LINE_ONCE)
-    events.removeAllListeners(IOEventTypes.UPDATE_LINE)
-    stdin.off('data', directOut)
-  }
-
   return {
     on: (...args: Parameters<typeof events.on>) => events.on(...args),
     off: (...args: Parameters<typeof events.off>) => events.off(...args),
     exit: () => {
-      removeAllListeners()
       process.exit(0)
     },
     pause: () => {
       stdin.pause()
-    },
-    destroy: () => {
-      removeAllListeners()
     },
     clear: () => {
       clear()

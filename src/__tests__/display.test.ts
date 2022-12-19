@@ -15,7 +15,6 @@ describe('display', () => {
   const mockedIoInstance: MockedIO = {
     on: jest.fn(),
     off: jest.fn(),
-    destroy: jest.fn(),
     exit: jest.fn(),
     clear: jest.fn(),
     pause: jest.fn(),
