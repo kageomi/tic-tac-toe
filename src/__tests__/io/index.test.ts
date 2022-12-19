@@ -13,7 +13,7 @@ describe('io client', () => {
 
   afterAll(() => {
     jest.restoreAllMocks()
-    io.destroy()
+    io.pause()
   })
 
   test('on: should emit UPDATE_LINE', () => {

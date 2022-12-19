@@ -74,7 +74,6 @@ const app = (): AppHandler => {
       display.printTurn(getCurrentBoad(), getNextPlayer())
     },
     exit: (): void => {
-      // io.destroy()
       io.pause()
     }
   }

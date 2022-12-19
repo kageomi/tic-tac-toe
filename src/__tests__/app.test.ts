@@ -509,34 +509,27 @@ describe('app', () => {
   describe('US_5 : end the game', () => {
     describe('the program should be terminated by pressing "e"', () => {
       describe('should be terminated by inserting a position of a mark', () => {
-        // test('should be terminated before typing a position', () => {
-        //   stdin.send('e\r')
-        //   expect(mockedExit).toHaveBeenCalledTimes(1)
-        // })
-        test('should be terminated while typing a position', () => {
-          // const mockedExit = jest.spyOn(process, 'exit')
-
-          stdin.send('1:')
-
+        test('should be terminated before typing a position', () => {
           expect(() => stdin.send('e')).toThrow(mockedExitMessage)
-          // expect(mockedExit).toHaveBeenCalledTimes(1)
+        })
+        test('should be terminated while typing a position', () => {
+          stdin.send('1:')
+          expect(() => stdin.send('e')).toThrow(mockedExitMessage)
         })
       })
-      //   test('could be terminated after printing stats', () => {
-      //     stdin.send('p')
-      //     stdin.send('e')
-      //     expect(mockedExit).toHaveBeenCalledTimes(1)
-      //   })
-      //   test('could be terminated after a result of a round', () => {
-      //     stdin.send('1:1\r')
-      //     stdin.send('2:1\r')
-      //     stdin.send('1:2\r')
-      //     stdin.send('3:1\r')
-      //     stdin.send('1:3\r')
-      //     expect(display).toMatch(/X won/)
-      //     stdin.send('e')
-      //     expect(mockedExit).toHaveBeenCalledTimes(1)
-      //   })
+      test('could be terminated after printing stats', () => {
+        stdin.send('p')
+        expect(() => stdin.send('e')).toThrow(mockedExitMessage)
+      })
+      test('could be terminated after a result of a round', () => {
+        stdin.send('1:1\r')
+        stdin.send('2:1\r')
+        stdin.send('1:2\r')
+        stdin.send('3:1\r')
+        stdin.send('1:3\r')
+        expect(display).toMatch(/X won/)
+        expect(() => stdin.send('e')).toThrow(mockedExitMessage)
+      })
     })
   })
 })
