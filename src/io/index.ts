@@ -4,7 +4,9 @@ import { IO, IOEventTypes, IOEvents } from './types'
 import readline from 'readline'
 readline.emitKeypressEvents(stdin)
 
-stdin.setRawMode(true)
+if (stdin.isTTY) {
+  stdin.setRawMode(true)
+}
 
 const createClient = (): IO => {
   stdin.resume()
@@ -37,10 +39,9 @@ const createClient = (): IO => {
         events.emit(IOEventTypes.UPDATE_LINE, line)
       }
       line = ''
-      write('\n')
     }
     line += str
-    write(str)
+    if (str !== '\r') write(str)
   }
   stdin.on('keypress', directOut)
 
