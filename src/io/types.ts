@@ -17,9 +17,10 @@ interface IOEvents {
 interface IO {
   on: TypedEmitter<IOEvents>['on']
   off: TypedEmitter<IOEvents>['on']
-  close: () => void
   exit: () => void
   clear: () => void
+  pause: () => void
+  destroy: () => void
   removeOnetimeListeners: () => void
   waitForAnswer: () => Promise<string>
   print: (message: string) => void
