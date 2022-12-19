@@ -17,6 +17,16 @@ const hasStringInDisplay = (display: string, board: string): void => {
   expect(display).toMatch(new RegExp(board))
 }
 
+/* eslint-disable  @typescript-eslint/unbound-method */
+const realProcessExit = process.exit
+const mockedExitMessage = 'this is mocked exit'
+process.exit = jest.fn(() => {
+  throw new Error(mockedExitMessage)
+})
+afterAll(() => {
+  process.exit = realProcessExit
+})
+
 describe('app', () => {
   let display = ''
   jest
@@ -496,37 +506,37 @@ describe('app', () => {
     })
   })
 
-  /*
   describe('US_5 : end the game', () => {
-    const mockedExit = jest.spyOn(process, 'exit')
     describe('the program should be terminated by pressing "e"', () => {
       describe('should be terminated by inserting a position of a mark', () => {
-        test('should be terminated before typing a position', () => {
-          stdin.send('e\r')
-          expect(mockedExit).toHaveBeenCalledTimes(1)
-        })
+        // test('should be terminated before typing a position', () => {
+        //   stdin.send('e\r')
+        //   expect(mockedExit).toHaveBeenCalledTimes(1)
+        // })
         test('should be terminated while typing a position', () => {
+          // const mockedExit = jest.spyOn(process, 'exit')
+
           stdin.send('1:')
-          stdin.send('e')
-          expect(mockedExit).toHaveBeenCalledTimes(1)
+
+          expect(() => stdin.send('e')).toThrow(mockedExitMessage)
+          // expect(mockedExit).toHaveBeenCalledTimes(1)
         })
       })
-      test('could be terminated after printing stats', () => {
-        stdin.send('p')
-        stdin.send('e')
-        expect(mockedExit).toHaveBeenCalledTimes(1)
-      })
-      test('could be terminated after a result of a round', () => {
-        stdin.send('1:1\r')
-        stdin.send('2:1\r')
-        stdin.send('1:2\r')
-        stdin.send('3:1\r')
-        stdin.send('1:3\r')
-        expect(display).toMatch(/X won/)
-        stdin.send('e')
-        expect(mockedExit).toHaveBeenCalledTimes(1)
-      })
+      //   test('could be terminated after printing stats', () => {
+      //     stdin.send('p')
+      //     stdin.send('e')
+      //     expect(mockedExit).toHaveBeenCalledTimes(1)
+      //   })
+      //   test('could be terminated after a result of a round', () => {
+      //     stdin.send('1:1\r')
+      //     stdin.send('2:1\r')
+      //     stdin.send('1:2\r')
+      //     stdin.send('3:1\r')
+      //     stdin.send('1:3\r')
+      //     expect(display).toMatch(/X won/)
+      //     stdin.send('e')
+      //     expect(mockedExit).toHaveBeenCalledTimes(1)
+      //   })
     })
   })
-  */
 })
