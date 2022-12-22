@@ -9,6 +9,10 @@ tic tac tue CLT for code challenge from amplimind
 `yarn build`
 Compiled file will be found `dist/index.js`
 
+## Build & Run
+`yarn build:run`
+you can build and run script simultaneously.
+
 ## Development
 `yarn start`
 Automatically update complied file if you edit script in src/.
