@@ -19,7 +19,7 @@ const app = (): AppHandler => {
   const io = createClient()
   const display = createDisplay(io)
 
-  const getCurrentBoad = (): Board => store.getters.currentBoard()
+  const getCurrentBoard = (): Board => store.getters.currentBoard()
   const getNextPlayer = (): Player => store.getters.nextPlayer()
   const getWinner = (): Player | null => store.getters.winnerOfCurrentRound()
   const getStats = (): Stats => store.getters.stats()
@@ -37,13 +37,13 @@ const app = (): AppHandler => {
     try {
       setMark(position)
       if (isRoundFinished()) {
-        display.printResult(getCurrentBoad(), getWinner())
+        display.printResult(getCurrentBoard(), getWinner())
         await io.waitForAnswer()
         startNewRound()
       }
-      display.printTurn(getCurrentBoad(), getNextPlayer())
+      display.printTurn(getCurrentBoard(), getNextPlayer())
     } catch (error) {
-      display.printTurn(getCurrentBoad(), getNextPlayer(), new Error(line))
+      display.printTurn(getCurrentBoard(), getNextPlayer(), new Error(line))
     }
   })
 
@@ -56,21 +56,21 @@ const app = (): AppHandler => {
     display.printStats(getStats())
     await io.waitForAnswer()
     if (isRoundFinished()) {
-      display.printResult(getCurrentBoad(), getWinner())
+      display.printResult(getCurrentBoard(), getWinner())
       await io.waitForAnswer()
       startNewRound()
     }
-    display.printTurn(getCurrentBoad(), getNextPlayer())
+    display.printTurn(getCurrentBoard(), getNextPlayer())
   })
 
-  display.printTurn(getCurrentBoad(), getNextPlayer())
+  display.printTurn(getCurrentBoard(), getNextPlayer())
 
   return {
     store,
     reset: (): void => {
       store.setters.reset()
       io.removeOnetimeListeners()
-      display.printTurn(getCurrentBoad(), getNextPlayer())
+      display.printTurn(getCurrentBoard(), getNextPlayer())
     },
     exit: (): void => {
       io.pause()
