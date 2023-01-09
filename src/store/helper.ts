@@ -44,7 +44,7 @@ const setMark = (board: Board, position: Position, mark: Player): Board => {
   const targetCell = board[rowIndex][colIndex]
   if (targetCell === undefined || targetCell != null)
     throw new Error('the position is invalid')
-  const field = [...board.map<Row>(row => [...row])] as Board
+  const field: Board = [[...board[0]], [...board[1]], [...board[2]]]
   field[rowIndex][colIndex] = mark
   return field
 }
