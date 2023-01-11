@@ -1,6 +1,8 @@
 # tic-tac-toe
-tic tac tue CLT for code challenge from amplimind
+tic tac tue CLT 
 
+## About this App
+you can play tic-toc-toe on your command line interface.
 
 ## Installation
 `yarn install`
